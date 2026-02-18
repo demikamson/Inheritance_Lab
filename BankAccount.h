@@ -10,6 +10,7 @@ class BankAccount {
 private:
     string accountNumber;
     string accountHolderName;
+protected:
     double balance;
 
 public:
@@ -17,7 +18,7 @@ public:
     BankAccount();
     BankAccount(string accNum, string name, double bal);
     BankAccount(const BankAccount& other); // Copy Constructor
-    ~BankAccount(); // Destructor
+    virtual ~BankAccount(); // Destructor
 
     // Accessors (Getters)
     string getAccountNumber() const;
@@ -27,7 +28,7 @@ public:
     // Mutators (Setters)
     void setAccountHolderName(string name);
     void deposit(double amount);
-    void withdraw(double amount);
+     virtual void withdraw(double amount);
 
     // Operator Overloads
     BankAccount& operator=(const BankAccount& other);
